@@ -11,6 +11,7 @@ final class AnonymousObserver<Element>: ObserverBase<Element> {
     
     private let eventHandler : EventHandler
     
+    // 逃逸闭包
     init(_ eventHandler: @escaping EventHandler) {
 #if TRACE_RESOURCES
         _ = Resources.incrementTotal()
