@@ -9,39 +9,58 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class Cate: NSObject{
-    
-    @objc dynamic var nick = 51
-    
-    var k: String{
-        "nick"
-    }
-}
 
 class ViewController: UIViewController {
-    let cat = Cate()
+    
     
     let bag = DisposeBag()
+    
+    lazy var tb: UITableView = {
+        let table = UITableView(frame: UIScreen.main.bounds)
+        table.rowHeight = 50
+        table.dataSource = self
+        table.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.id)
+        return table
+    }()
+    
+    
+    //  SchedulerType, 调度者
+    //  gcd timer
+    lazy var timer: Observable<Int> = Observable<Int>.interval(DispatchTimeInterval.milliseconds(200), scheduler: MainScheduler.instance)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        cat.rx.observeWeakly(Int.self, cat.k).subscribe(onNext: {val in
-            if let v = val{
-                print(v)
-            }
+        view.addSubview(tb)
+        
+        timer.subscribe(onNext: {val in
+            print(val)
         }).disposed(by: bag)
-
-        
-        
-        
         
         
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        cat.nick += 3
-    }
 }
 
+
+
+
+
+extension ViewController: UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 60
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cel = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.id, for: indexPath)
+        cel.textLabel?.text = "\(indexPath.row) . 宫"
+        
+        cel.textLabel?.textColor = UIColor.blue
+        return cel
+    }
+    
+    
+}
