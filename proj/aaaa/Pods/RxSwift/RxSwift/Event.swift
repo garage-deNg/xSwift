@@ -10,6 +10,11 @@
 ///
 /// Sequence grammar: 
 /// **next\* (error | completed)**
+
+
+/// 事件的定义
+
+
 @frozen public enum Event<Element> {
     /// Next element is produced.
     case next(Element)

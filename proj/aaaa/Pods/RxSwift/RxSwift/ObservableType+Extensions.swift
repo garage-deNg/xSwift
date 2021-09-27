@@ -96,7 +96,16 @@ extension ObservableType {
             #endif
             
             let callStack = Hooks.recordCallStackOnError ? Hooks.customCaptureSubscriptionCallstack() : []
+            // 也就是一层封装
             
+            // 层层封装
+        
+            // 等价于， let ob = AnonymousObserver(参数)， 参数是逃逸闭包，
+            // 类{}, 尾随逃逸闭包
+        
+        
+            // 把各种事件处理， next , ok , err
+            // 通过枚举，聚合成标准的事件 Event
             let observer = AnonymousObserver<Element> { event in
                 
                 #if DEBUG
