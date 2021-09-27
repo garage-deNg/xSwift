@@ -36,6 +36,10 @@ class ViewController: UIViewController {
         // sink run
         //  parent.subscribeHandler(AnyObserver(self))
         
+        
+        // 通道建立了， 函数式编程
+        
+        
         //  保存闭包 （ 持有事件 subscribeHandler ） -> 函数式编程思想
         
         
@@ -43,6 +47,8 @@ class ViewController: UIViewController {
         let signal = Observable<String>.create { observer in
             
             // 3， 发送信号
+            
+            // 具体的运行
             observer.onNext("哈哈")
             
             
@@ -86,3 +92,13 @@ class ViewController: UIViewController {
 
 
 
+// 具体的事件 -> 枚举聚合， 事件 Event
+// 封装，包
+
+
+
+
+
+
+// 解包
+// 事件 Event -> 具体的事件处理， 拆枚举

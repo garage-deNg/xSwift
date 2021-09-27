@@ -47,6 +47,13 @@ final private class DebugSink<Source: ObservableType, Observer: ObserverType>: S
         super.init(observer: observer, cancel: cancel)
     }
     
+    
+    
+    
+    
+    
+    
+    
     func on(_ event: Event<Element>) {
         let maxEventTextLength = 40
         let eventText = "\(event)"
@@ -62,6 +69,12 @@ final private class DebugSink<Source: ObservableType, Observer: ObserverType>: S
             self.dispose()
         }
     }
+    
+    
+    
+    
+    
+    
     
     override func dispose() {
         if !self.isDisposed {

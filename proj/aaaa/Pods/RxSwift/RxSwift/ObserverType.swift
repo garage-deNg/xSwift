@@ -24,6 +24,8 @@ extension ObserverType {
     ///
     /// - parameter element: Next element to send to observer(s)
     public func onNext(_ element: Element) {
+        
+        // 甩了，一个事件
         self.on(.next(element))
     }
     
