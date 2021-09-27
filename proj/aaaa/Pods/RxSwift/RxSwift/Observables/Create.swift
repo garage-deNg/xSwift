@@ -22,6 +22,15 @@ extension ObservableType {
     }
 }
 
+
+
+
+
+
+
+
+
+
 final private class AnonymousObservableSink<Observer: ObserverType>: Sink<Observer>, ObserverType {
     typealias Element = Observer.Element 
     typealias Parent = AnonymousObservable<Element>
@@ -56,6 +65,12 @@ final private class AnonymousObservableSink<Observer: ObserverType>: Sink<Observ
         }
     }
 
+    
+    
+    
+    // 在这里，跑通了
+    // 生产的事件，
+    // 消费了
     func run(_ parent: Parent) -> Disposable {
         parent.subscribeHandler(AnyObserver(self))
     }
@@ -95,9 +110,26 @@ final private class AnonymousObservable<Element>: Producer<Element> {
         self.subscribeHandler = subscribeHandler
     }
 
+    
+    // 父类订阅
+    // 子类 ( 这个类 )  run
     override func run<Observer: ObserverType>(_ observer: Observer, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where Observer.Element == Element {
         let sink = AnonymousObservableSink(observer: observer, cancel: cancel)
         let subscription = sink.run(self)
         return (sink: sink, subscription: subscription)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

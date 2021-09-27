@@ -28,6 +28,9 @@ class Producer<Element>: Observable<Element> {
         if !CurrentThreadScheduler.isScheduleRequired {
             // The returned disposable needs to release all references once it was disposed.
             let disposer = SinkDisposer()
+            
+            // 这里跑
+            // 子类 run
             let sinkAndSubscription = self.run(observer, cancel: disposer)
             disposer.setSinkAndSubscription(sink: sinkAndSubscription.sink, subscription: sinkAndSubscription.subscription)
 
