@@ -30,6 +30,12 @@ class ViewController: UIViewController {
         
         // 1, 创建序列
         //  final private class AnonymousObservable<Element>: Producer<Element>
+        
+        
+        //  Producer 的订阅方法， subscribe
+        // sink run
+        //  parent.subscribeHandler(AnyObserver(self))
+        
         //  保存闭包 （ 持有事件 subscribeHandler ） -> 函数式编程思想
         
         

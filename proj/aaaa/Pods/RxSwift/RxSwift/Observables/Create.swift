@@ -71,6 +71,9 @@ final private class AnonymousObservableSink<Observer: ObserverType>: Sink<Observ
     // 在这里，跑通了
     // 生产的事件，
     // 消费了
+    
+    // 订阅后 subsribe ， 交给控制类 sink, 再 run
+    // sink, 水槽，控制水的流向
     func run(_ parent: Parent) -> Disposable {
         parent.subscribeHandler(AnyObserver(self))
     }
