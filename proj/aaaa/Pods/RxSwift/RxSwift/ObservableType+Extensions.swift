@@ -103,9 +103,11 @@ extension ObservableType {
                     synchronizationTracker.register(synchronizationErrorMessage: .default)
                     defer { synchronizationTracker.unregister() }
                 #endif
-                
+                // 事件
                 switch event {
                 case .next(let value):
+                    //
+                    // AnonymousObserver 闭包，中包含 （ 闭包 ） 事件的调用
                     onNext?(value)
                 case .error(let error):
                     if let onError = onError {

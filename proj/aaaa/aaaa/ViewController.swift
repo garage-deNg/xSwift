@@ -63,6 +63,7 @@ class ViewController: UIViewController {
         
         signal.subscribe { str in
             // _eventHandler
+            // 回调，通过逃逸闭包，来 catch
         } onError: { err in
             
         } onCompleted: {
