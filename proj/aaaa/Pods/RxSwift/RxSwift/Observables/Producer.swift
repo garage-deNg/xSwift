@@ -6,6 +6,19 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
+
+
+
+
+
+
+
+
+
+
+
+// 生产者
+
 class Producer<Element>: Observable<Element> {
     override init() {
         super.init()
@@ -35,6 +48,17 @@ class Producer<Element>: Observable<Element> {
         rxAbstractMethod()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 private final class SinkDisposer: Cancelable {
     private enum DisposeState: Int32 {

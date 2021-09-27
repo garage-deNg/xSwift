@@ -61,6 +61,31 @@ final private class AnonymousObservableSink<Observer: ObserverType>: Sink<Observ
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  self.asObservable().subscribe(observer),
+
+
+// AnonymousObservable().asObservable().subscribe(observer),
+
+
+// subscribe ， 订阅方法， 在其父类
+
+
+
 final private class AnonymousObservable<Element>: Producer<Element> {
     typealias SubscribeHandler = (AnyObserver<Element>) -> Disposable
 

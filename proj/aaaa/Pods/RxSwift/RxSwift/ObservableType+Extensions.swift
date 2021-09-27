@@ -132,6 +132,7 @@ extension ObservableType {
                 }
             }
             return Disposables.create(
+                // 订阅事件
                 self.asObservable().subscribe(observer),
                 disposable
             )
