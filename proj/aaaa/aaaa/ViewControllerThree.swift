@@ -34,13 +34,32 @@ class ViewControllerThree: UIViewController {
         
         view.addSubview(tb)
         
+        //
+        // timeOp()
+        
+        //
+        
+        tb.rx.itemSelected.subscribe(onNext: { [ unowned self] ip in
+            switch ip.row{
+            case 0:
+                self.navigationController?.pushViewController(ViewController(), animated: true)
+            case 1:
+                self.navigationController?.pushViewController(ViewControllerTwo(), animated: true)
+            default:
+                ()
+            }
+            
+            
+        }).disposed(by: bag)
+    }
+
+    
+    
+    func timeOp(){
         timer.subscribe(onNext: {val in
             print(val)
         }).disposed(by: bag)
-        
-        
     }
-
 }
 
 
@@ -56,11 +75,21 @@ extension ViewControllerThree: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cel = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.id, for: indexPath)
-        cel.textLabel?.text = "\(indexPath.row) . 宫"
-        
+        var name = ""
+        switch indexPath.row{
+        case 0:
+            name = String(describing: ViewController.self)
+        case 1:
+            name = String(describing: ViewControllerTwo.self)
+        default:()
+        }
+        cel.textLabel?.text = "\(indexPath.row) . \(name)"
         cel.textLabel?.textColor = UIColor.blue
         return cel
     }
     
     
 }
+
+
+

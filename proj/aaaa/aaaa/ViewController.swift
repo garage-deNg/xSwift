@@ -9,6 +9,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+// 响应式，体现在，绑定
+
+// 动态更新
+
+
+
+
+
+
 
 class ViewController: UIViewController {
     
@@ -90,7 +99,7 @@ class ViewController: UIViewController {
 
 
 
-
+// 1， 建立通道
 
 // 具体的事件 -> 枚举聚合， 事件 Event
 // 封装，包
@@ -100,5 +109,23 @@ class ViewController: UIViewController {
 
 
 
+// 具体事件处理的 block
+// 消费
+
+
+
+
+
 // 解包
 // 事件 Event -> 具体的事件处理， 拆枚举
+
+
+
+
+// 2， 发送具体的事件
+// 生产
+
+
+
+
+
