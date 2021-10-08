@@ -21,6 +21,11 @@ extension ObservableType {
     }
 }
 
+
+
+// Observable 的存在，因为
+
+
 final private class GroupedObservableImpl<Element>: Observable<Element> {
     private var subject: PublishSubject<Element>
     private var refCount: RefCountDisposable
