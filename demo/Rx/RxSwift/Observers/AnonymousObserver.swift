@@ -13,11 +13,17 @@ final class AnonymousObserver<Element>: ObserverBase<Element> {
     
     init(_ eventHandler: @escaping EventHandler) {
 #if TRACE_RESOURCES
+        
+        // 对象统计
+        // 观察者，计数
+        
         _ = Resources.incrementTotal()
 #endif
         self.eventHandler = eventHandler
     }
 
+    
+    
     override func onCore(_ event: Event<Element>) {
         self.eventHandler(event)
     }
