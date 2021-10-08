@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import UIKit
 
 /// Protocol that enables extension of `ControlProperty`.
 public protocol ControlPropertyType : ObservableType, ObserverType {
@@ -87,8 +88,17 @@ public struct ControlProperty<PropertyType> : ControlPropertyType {
     
     
     
+    
+    // UISwitch().rx.value.asObservable()
+    
+
+    
     /// - returns: `Observable` interface.
     public func asObservable() -> Observable<Element> {
+        
+        
+        
+        
         self.values
     }
 
