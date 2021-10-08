@@ -45,6 +45,11 @@ class SimpleValidationViewController : ViewController {
             .map { $0.count >= minimalPasswordLength }
             .share(replay: 1)
 
+        
+        
+        // 这里顺带的数据处理，有意思
+        
+        
         let everythingValid = Observable.combineLatest(usernameValid, passwordValid) { $0 && $1 }
             .share(replay: 1)
 
