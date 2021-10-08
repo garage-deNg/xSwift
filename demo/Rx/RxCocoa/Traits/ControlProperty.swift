@@ -40,6 +40,34 @@ public protocol ControlPropertyType : ObservableType, ObserverType {
     **In case `values` observable sequence that is being passed into initializer doesn't satisfy all enumerated
     properties, please don't use this trait.**
 */
+
+
+
+/*
+ 
+ 
+ 
+ ControlProperty，
+ 
+ 
+ 
+ 
+ 这个，  不是序列 Observable
+ 
+ 
+ 
+ 
+ 可以间接， asObservable()
+ 
+ 
+ 
+ 
+ 关联到
+ 
+ 
+ */
+
+
 public struct ControlProperty<PropertyType> : ControlPropertyType {
     public typealias Element = PropertyType
 
@@ -90,6 +118,14 @@ public struct ControlProperty<PropertyType> : ControlPropertyType {
     
     
     // UISwitch().rx.value.asObservable()
+    
+    
+    
+    
+    
+    // 从系统的 UISwitch， 到可观察者  （    序列    ） ， 需要做一个转化
+    // 接口隔离，原则
+    
     
 
     

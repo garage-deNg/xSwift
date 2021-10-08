@@ -12,6 +12,11 @@
 public class Observable<Element> : ObservableType {
     init() {
 #if TRACE_RESOURCES
+        // 资源统计
+        
+        // 可发现内存问题
+        
+        // 避免内存泄漏
         _ = Resources.incrementTotal()
 #endif
     }
