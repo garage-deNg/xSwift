@@ -18,6 +18,9 @@ public class Observable<Element> : ObservableType {
         
         // 避免内存泄漏
         _ = Resources.incrementTotal()
+        
+        
+        // 与埋点，类似
 #endif
     }
     
