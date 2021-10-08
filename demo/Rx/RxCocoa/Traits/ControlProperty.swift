@@ -79,6 +79,14 @@ public struct ControlProperty<PropertyType> : ControlPropertyType {
         ControlEvent(events: self.values.skip(1))
     }
 
+    
+    
+    
+    // ControlProperty
+    // 这里有用
+    
+    
+    
     /// - returns: `Observable` interface.
     public func asObservable() -> Observable<Element> {
         self.values
